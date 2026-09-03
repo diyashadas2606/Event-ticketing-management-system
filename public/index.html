@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Ticketing System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- LOGIN PAGE -->
+  <div id="loginPage" class="page active">
+    <div class="container">
+      <div class="auth-box">
+        <h1>Event Ticketing System</h1>
+        <form id="loginForm">
+          <input type="text" id="username" placeholder="Username" required>
+          <input type="password" id="password" placeholder="Password" required>
+          <button type="submit">Login</button>
+        </form>
+        <p class="hint">Demo: username: <strong>user</strong>, password: <strong>user123</strong></p>
+        <p class="hint">Admin: username: <strong>admin</strong>, password: <strong>admin123</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENTS PAGE (USER VIEW) -->
+  <div id="eventsPage" class="page">
+    <div class="navbar">
+      <h1>Events</h1>
+      <button id="logoutBtn" class="logout-btn">Logout</button>
+    </div>
+    <div class="container">
+      <div id="eventsList" class="events-grid"></div>
+    </div>
+  </div>
+
+  <!-- ADMIN DASHBOARD -->
+  <div id="adminPage" class="page">
+    <div class="navbar">
+      <h1>Admin Dashboard</h1>
+      <button id="logoutBtn2" class="logout-btn">Logout</button>
+    </div>
+    <div class="container">
+      <!-- Create Event Form -->
+      <div class="admin-section">
+        <h2>Create New Event</h2>
+        <form id="createEventForm">
+          <input type="text" id="eventName" placeholder="Event Name" required>
+          <input type="date" id="eventDate" required>
+          <input type="text" id="eventVenue" placeholder="Venue" required>
+          <input type="number" id="eventPrice" placeholder="Price" step="0.01" required>
+          <textarea id="eventDescription" placeholder="Description"></textarea>
+          <button type="submit">Create Event</button>
+        </form>
+      </div>
+
+      <!-- Events List for Admin -->
+      <div class="admin-section">
+        <h2>All Events</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Event Name</th>
+              <th>Date</th>
+              <th>Venue</th>
+              <th>Price</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="adminEventsList"></tbody>
+        </table>
+      </div>
+
+      <!-- Bookings & Analytics -->
+      <div class="admin-section">
+        <h2>Bookings & Revenue</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Event</th>
+              <th>Bookings</th>
+              <th>Tickets Sold</th>
+              <th>Revenue</th>
+            </tr>
+          </thead>
+          <tbody id="analyticsTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
